@@ -1,12 +1,14 @@
 
 def encrypt(key,plaintext):
-    ciphertext=""
-    #YOUR CODE HERE
+    M = [(ord(x) + key)% 26 + 65  for x in plaintext]
+    S = [chr(x) for x in M]
+    ciphertext=''.join(S)
     return ciphertext
 
 def decrypt(key,ciphertext):
-    plaintext=""
-    #YOUR CODE HERE
+    M = [(ord(x) - key)% 26 + 65  for x in ciphertext]
+    S = [chr(x) for x in M]
+    plaintext = ''.join(S)
     return plaintext
 
 
